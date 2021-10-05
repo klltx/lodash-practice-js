@@ -7,6 +7,15 @@ const _chunk = (array, size = 1) => {
   return array
 }
 
+
+/* 
+Creates an array with all falsey values removed. 
+The values false, null, 0, "", undefined, and NaN are falsey.
+*/
+const _compact = (array) => {
+  return array
+}
+
 const main = (args) => {
   return args
 }
