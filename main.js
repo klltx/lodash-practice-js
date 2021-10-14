@@ -1,4 +1,5 @@
 "use strict";
+
 /* 
 Creates an array of elements split into groups the length of size.
 If array can't be split evenly, the final chunk will be the remaining elements.
@@ -31,11 +32,20 @@ const _compact = (array) => {
   return compactArray
 }
 
+/*
+Creates a new array concatenating array with any additional arrays and/or values.
+*/
+const _concat = (array, ...values) => {
+  return [ ...array, ...values ]
+}
 
 
 const main = (args) => {
   // console.log(_chunk(['a', 'b', 'c', 'd'], 2));
-  console.log(_compact([0, 1, false, 2, '', 3, undefined, NaN]));
+  // console.log(_compact([0, 1, false, 2, '', 3, undefined, NaN]));
+
+  const array = [1];
+  console.log(_concat(array, 2, [3], [[4]]));
   return args;
 }
 
