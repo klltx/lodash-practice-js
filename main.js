@@ -56,6 +56,25 @@ const _difference = (array, values) => {
   return resultArray;
 };
 
+/*
+This method returns the first argument it receives.
+*/
+const _identity = (object) => {
+  return object;
+};
+
+/*
+This method is like _.difference except that it accepts iteratee 
+which is invoked for each element of array and values to generate 
+the criterion by which they're compared. The order and references 
+of result values are determined by the first array. 
+The iteratee is invoked with one argument:
+(value).
+*/
+const _differenceBy = (array, values, iteratee = _identity) => {
+  return array;
+};
+
 const main = (args) => {
   // console.log(_chunk(['a', 'b', 'c', 'd'], 2));
 
