@@ -72,7 +72,14 @@ The iteratee is invoked with one argument:
 (value).
 */
 const _differenceBy = (array, values, iteratee = _identity) => {
-  return array;
+  const iterateeValues = values.map((v) => iteratee(v)),
+    resultArray = [];
+
+  array.forEach((v) => {
+    if (!iterateeValues.includes(iteratee(v))) resultArray.push(v);
+  });
+
+  return resultArray;
 };
 
 const main = (args) => {
@@ -83,7 +90,9 @@ const main = (args) => {
   // const array = [1];
   // console.log(_concat(array, 2, [3], [[4]]));
 
-  console.log(_difference([2, 1], [2, 3]));
+  // console.log(_difference([2, 1], [2, 3]));
+
+  console.log(_differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor));
 
   return args;
 };
